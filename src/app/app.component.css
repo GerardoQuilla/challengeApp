@@ -1,0 +1,9 @@
+.navigation{
+  background-color: #ffdf39;
+  padding: 30px;
+}
+.app-content{
+  /*height: 100%;*/
+  padding: 20px 0;
+  background-color: #009439;
+}

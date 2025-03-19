@@ -1,0 +1,35 @@
+<form (ngSubmit)="updateExpense()" class="update-form">
+
+  <mat-form-field>
+    <mat-label>Titulo</mat-label>
+    <input matInput name="title" [(ngModel)]="data.title">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Descripcion</mat-label>
+    <input matInput name="reason" [(ngModel)]="data.reason">
+  </mat-form-field>
+
+  <!--<mat-form-field>
+    <mat-label>Fecha</mat-label>
+    <input matInput name="date" [(ngModel)]="date">
+  </mat-form-field>-->
+
+  <mat-form-field>
+    <mat-label>Fecha de creacion</mat-label>
+    <input matInput [matDatepicker]="picker" name="date" [(ngModel)]="auxDate" >
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Monto</mat-label>
+    <input matInput name="amount" type="number" step="0.01" min="0" max="12" [(ngModel)]="data.amount">
+  </mat-form-field>
+
+  <button type="submit">
+    Actualizar
+  </button>
+
+</form>

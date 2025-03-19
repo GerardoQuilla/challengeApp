@@ -1,0 +1,18 @@
+<h2 style="text-align: center; margin: 0">Aplicación de gestión de gastos</h2>
+<mat-tab-group>
+  <mat-tab label="Crear">
+    <app-create/>
+  </mat-tab>
+  <mat-tab label="Listar">
+    <ng-template matTabContent>
+      <app-list/>
+    </ng-template>
+
+  </mat-tab>
+  <!--<mat-tab label="Actualizar">
+    <app-update/>
+  </mat-tab>
+  <mat-tab label="Borrar">
+    <app-delete/>
+  </mat-tab>-->
+</mat-tab-group>

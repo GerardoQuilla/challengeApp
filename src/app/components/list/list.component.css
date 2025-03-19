@@ -1,0 +1,31 @@
+.container{
+  height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.expenses-list{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 50%;
+}
+
+.expenses-list li{
+  margin: 20px 0;
+  list-style: none;
+  padding: 0;
+
+}
+
+
+.filter-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
