@@ -12,7 +12,6 @@ import {DeleteComponent} from '../delete/delete.component';
   styleUrl: './list.component.css'
 })
 export class ListComponent implements OnInit{
-
   selectedFilter="all"
   monthNumber=1;
 
@@ -22,9 +21,6 @@ export class ListComponent implements OnInit{
   }
 
   ngOnInit() {
-    this._expensesService.getAllExpenses().subscribe(expenses => {
-      this.expensesList=expenses;
-    })
   }
 
   getExpenses() {
@@ -51,16 +47,14 @@ export class ListComponent implements OnInit{
     const dialogRef=this.dialog.open(DeleteComponent,{
       width: '600px',
       data:{
-        currentId:current.id,
-        expense:current
+        expense:current,
+        list:this.expensesList
       }
     })
     dialogRef.afterClosed().subscribe((result:number)=>{
-      console.log(result)
       if (result){
-        const index = this.expensesList.findIndex(expense=>expense.id === result)
-        if(index!==-1){
-          this.expensesList.splice(index,1)
+        if(result!==-1){
+          this.expensesList.splice(result,1)
         }
       }
     })

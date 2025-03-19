@@ -21,6 +21,8 @@ import {MatIcon} from '@angular/material/icon';
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from '@angular/material/datepicker';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 import {DatePipe} from '@angular/common';
+import {MatButton} from "@angular/material/button";
+import {MatProgressSpinner} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -45,10 +47,10 @@ import {DatePipe} from '@angular/common';
     MatSelectModule,
     MatTabContent,
     MatIcon,
-
     MatDatepickerInput,
     MatDatepickerToggle,
     MatDatepicker,
+    MatButton,
   ],
   providers: [
     DatePipe,

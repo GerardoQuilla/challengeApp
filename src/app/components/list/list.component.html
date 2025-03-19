@@ -1,19 +1,21 @@
 <div>
   <div class="filter-section">
-    <mat-form-field>
-      <mat-label>Filtrar gastos</mat-label>
-      <mat-select [(value)]="selectedFilter">
-        <mat-option value="all">Todos</mat-option>
-        <mat-option value="month">Por mes</mat-option>
-      </mat-select>
-    </mat-form-field>
-    @if (selectedFilter === "month") {
+    <div class="filter-input-section">
       <mat-form-field>
-        <mat-label>Month</mat-label>
-        <input matInput type="number" name="monthNumber"
-               step="1" min="1" max="12" [(ngModel)]="monthNumber">
+        <mat-label>Filtrar gastos</mat-label>
+        <mat-select [(value)]="selectedFilter">
+          <mat-option value="all">Todos</mat-option>
+          <mat-option value="month">Por mes</mat-option>
+        </mat-select>
       </mat-form-field>
-    }
+      @if (selectedFilter === "month") {
+        <mat-form-field>
+          <mat-label>Month</mat-label>
+          <input matInput type="number" name="monthNumber"
+                 step="1" min="1" max="12" [(ngModel)]="monthNumber">
+        </mat-form-field>
+      }
+    </div>
     <button (click)="getExpenses()">Obtener</button>
   </div>
 
@@ -26,16 +28,15 @@
               <mat-card-title>{{ item.title }}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-              <div style="display:flex;flex-direction: row;
-               justify-content: space-between;align-items: center">
-                <div>
+              <div class="content-section">
+                <div style="width: 80%">
                   <p>Motivo: {{ item.reason }}</p>
                   <p>Fecha: {{ item.date }}</p>
                   <p>Monto: {{ item.amount }}</p>
                 </div>
-                <div>
-                  <mat-icon (click)="editExpense(item)">edit</mat-icon>
-                  <mat-icon (click)="deleteExpense(item)">delete</mat-icon>
+                <div style="display:flex;justify-content: center">
+                  <mat-icon class="icon-button" (click)="editExpense(item)">edit</mat-icon>
+                  <mat-icon class="icon-button" (click)="deleteExpense(item)">delete</mat-icon>
                 </div>
               </div>
             </mat-card-content>
@@ -44,6 +45,8 @@
       } @empty {
         <h4 style="text-align: center">Aún no hay registros</h4>
       }
+
+
     </ul>
   </div>
 </div>

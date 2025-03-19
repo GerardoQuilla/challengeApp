@@ -1,5 +1,5 @@
-.container{
-  height: 200px;
+.container {
+  height: 220px;
   overflow-x: hidden;
   overflow-y: auto;
   margin-right: 30px;
@@ -7,25 +7,52 @@
   justify-content: center;
 }
 
-.expenses-list{
+.expenses-list {
   display: block;
-  justify-content: center;
   align-items: center;
   padding: 0;
   width: 50%;
+  margin: 0;
 }
 
-.expenses-list li{
-  margin: 20px 0;
+.expenses-list li {
+  margin-bottom: 20px;
   list-style: none;
   padding: 0;
-
 }
 
+.content-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
 
-.filter-section{
+.icon-button:hover {
+  background-color: #a8a8a8;
+  cursor: pointer;
+}
+
+.filter-section {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
+
+.filter-input-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  .expenses-list{
+    width: 90%;
+  }
+  .filter-input-section{
+    flex-direction: column;
+
+  }
 }
